@@ -6,3 +6,28 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.clock {
+  width: clamp(300px, 50vw, 500px);
+  height: clamp(300px, 50vw, 500px);
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+}
+
+.clock .hand {
+  width: 49%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 200ms;
+  transform-origin: left;
+  transform: rotate(var(--rotation));
+}
+
+.clock .hand.hour {
+  width: 30%;
+  background-color: red;
+}
