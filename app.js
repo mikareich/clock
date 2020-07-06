@@ -1,15 +1,20 @@
-const Time = {
-  hour: new Date().getHours(),
-  minute: new Date().getMinutes(),
-}
-
 const clockHandHour = document.querySelector('.hand.hour')
 const clockHandMinute = document.querySelector('.hand.minute')
 
-function setHands(hand, value) {
-  let rotation = hand === clockHandMinute ? value * 6 : value * 15
-  // set css variable and subtract css offset of hands
-  hand.setAttribute('style', `--rotation:${rotation - 90}deg`)
+function setHands() {
+  const Total_Milliseconds_Of_Day = 86400000
+  const Milliseconds_Of_Day =
+    new Date().getTime() - new Date().setHours(0, 0, 0, 0)
+  const PassedTime = Milliseconds_Of_Day / Total_Milliseconds_Of_Day
+
+  // calculate progress in degreses multiplicated by the implementation
+  const HourRotation = PassedTime * 360 * 2
+  const MinuteRotation = PassedTime * 360 * 24
+
+  // subtract css offset (90deg)
+  clockHandHour.setAttribute('style', `--rotation:${HourRotation - 90}deg`)
+  clockHandMinute.setAttribute('style', `--rotation:${MinuteRotation - 90}deg`)
 }
 
-setHands(clockHandHour, Time.hour)
+// rerender every sec
+window.setTimeout(setHands, 1000)
