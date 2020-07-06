@@ -8,17 +8,21 @@ body {
 }
 
 .clock {
-  width: clamp(300px, 50vw, 500px);
-  height: clamp(300px, 50vw, 500px);
+  --min-size: 200px;
+  --max-size: 500px;
+  width: clamp(var(--min-size), 50vw, var(--max-size));
+  height: clamp(var(--min-size), 50vw, var(--max-size));
   border-radius: 50%;
-  border: 2px solid black;
   position: relative;
+  background: url(./clock-face.jpg);
+  background-position: center;
+  background-size: contain;
 }
 
 .clock .hand {
-  width: 49%;
-  height: 2px;
-  background-color: black;
+  width: 45%;
+  height: 3px;
+  background-color: rgb(27, 27, 27);
   position: absolute;
   top: 50%;
   left: 50%;
