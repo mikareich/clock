@@ -34,8 +34,8 @@ function setHands() {
 // rerender every 10 ms
 window.setInterval(setHands, 10)
 
-//  add sw
-
+/* //  add sw
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register('sw.js')
 }
+ */
