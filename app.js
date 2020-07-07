@@ -1,6 +1,6 @@
-const clockHandHour = document.querySelector('.hand.hour')
-const clockHandMinute = document.querySelector('.hand.minute')
-const clockHandSecond = document.querySelector('.hand.second')
+const clockHandHours = document.querySelector('.hand.Hours')
+const clockHandMinutes = document.querySelector('.hand.Minutes')
+const clockHandSeconds = document.querySelector('.hand.Seconds')
 const timeSpan = document.querySelector('span#time')
 
 function setHands() {
@@ -10,17 +10,26 @@ function setHands() {
   const DayProgress = Milliseconds_Of_Day / Total_Milliseconds_Of_Day
 
   // calculate progress in degreses multiplicated by the implementation
-  const HourRotation = DayProgress * 360 * 2
-  const MinuteRotation = DayProgress * 360 * 24
-  const SecondRotation = DayProgress * 360 * 1440
+  const HoursRotation = DayProgress * 360 * 2
+  const MinutesRotation = DayProgress * 360 * 24
+  const SecondsRotation = DayProgress * 360 * 1440
 
   // subtract css offset (90deg)
-  clockHandHour.setAttribute('style', `--rotation:${HourRotation - 90}deg`)
-  clockHandMinute.setAttribute('style', `--rotation:${MinuteRotation - 90}deg`)
-  clockHandSecond.setAttribute('style', `--rotation:${SecondRotation - 90}deg`)
+  clockHandHours.setAttribute('style', `--rotation:${HoursRotation - 90}deg`)
+  clockHandMinutes.setAttribute(
+    'style',
+    `--rotation:${MinutesRotation - 90}deg`
+  )
+  clockHandSeconds.setAttribute(
+    'style',
+    `--rotation:${SecondsRotation - 90}deg`
+  )
   // display time in span
-  timeSpan.innerHTML = `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`
+  const Hours = ('0' + new Date().getHours()).slice(-2)
+  const Minutes = ('0' + new Date().getMinutes()).slice(-2)
+  const Seconds = ('0' + new Date().getSeconds()).slice(-2)
+  timeSpan.innerHTML = `${Hours}:${Minutes}:${Seconds}`
 }
 
-// rerender every sec
+// rerender every 10 ms
 window.setInterval(setHands, 10)

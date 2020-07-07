@@ -36,10 +36,10 @@ main {
   border-radius: 2px;
 }
 
-.clock .hand.hour {
+.clock .hand.Hours {
   width: 30%;
 }
-.clock .hand.second {
+.clock .hand.Seconds {
   width: 48%;
   background-color: white;
 }
