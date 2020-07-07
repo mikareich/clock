@@ -1,3 +1,7 @@
+:root {
+  --neomorphism-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+}
+
 html,
 body {
   display: grid;
@@ -20,7 +24,7 @@ main {
   height: clamp(var(--min-size), 50vw, var(--max-size));
   border-radius: 50%;
   position: relative;
-  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+  box-shadow: var(--neomorphism-shadow);
 }
 
 .clock .hand {
@@ -33,6 +37,7 @@ main {
   transform-origin: left;
   transform: rotate(var(--rotation)) translate(-20px);
   border-radius: 2px;
+  z-index: 1;
 }
 
 .clock .hand.Hours {
@@ -43,8 +48,14 @@ main {
   background-color: #a3b1c6;
 }
 
-span#time {
-  margin-top: 20px;
+.clock span#time {
   font-size: 20pt;
   color: #4857b1;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  padding: 5px 10px;
+  transform: translateX(-50%);
+  box-shadow: var(--neomorphism-shadow);
+  border-radius: 5px;
 }
