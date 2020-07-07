@@ -8,6 +8,11 @@ body {
   background-color: #1a1a1a;
 }
 
+main {
+  display: grid;
+  justify-items: center;
+}
+
 .clock {
   --min-size: 200px;
   --max-size: 500px;
@@ -20,7 +25,7 @@ body {
 
 .clock .hand {
   width: 40%;
-  height: 2px;
+  height: 4px;
   background-color: #4857b1;
   position: absolute;
   top: 50%;
@@ -28,7 +33,7 @@ body {
   transition: 200ms;
   transform-origin: left;
   transform: rotate(var(--rotation));
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 .clock .hand.hour {
@@ -37,4 +42,10 @@ body {
 .clock .hand.second {
   width: 48%;
   background-color: white;
+}
+
+span#time {
+  margin-top: 20px;
+  font-size: 20pt;
+  color: white;
 }

@@ -1,6 +1,7 @@
 const clockHandHour = document.querySelector('.hand.hour')
 const clockHandMinute = document.querySelector('.hand.minute')
 const clockHandSecond = document.querySelector('.hand.second')
+const timeSpan = document.querySelector('span#time')
 
 function setHands() {
   const Total_Milliseconds_Of_Day = 86400000
@@ -17,6 +18,8 @@ function setHands() {
   clockHandHour.setAttribute('style', `--rotation:${HourRotation - 90}deg`)
   clockHandMinute.setAttribute('style', `--rotation:${MinuteRotation - 90}deg`)
   clockHandSecond.setAttribute('style', `--rotation:${SecondRotation - 90}deg`)
+  // display time in span
+  timeSpan.innerHTML = `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`
 }
 
 // rerender every sec
