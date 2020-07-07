@@ -18,7 +18,7 @@ main {
 }
 
 .clock {
-  --min-size: 200px;
+  --min-size: 250px;
   --max-size: 500px;
   width: clamp(var(--min-size), 50vw, var(--max-size));
   height: clamp(var(--min-size), 50vw, var(--max-size));
@@ -49,12 +49,11 @@ main {
 }
 
 .clock span#time {
-  font-size: 20pt;
   color: #4857b1;
   position: absolute;
   top: 50px;
   left: 50%;
-  padding: 5px 10px;
+  padding: 10px 20px;
   transform: translateX(-50%);
   box-shadow: var(--neomorphism-shadow);
   border-radius: 5px;
