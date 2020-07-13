@@ -36,5 +36,5 @@ window.setInterval(setHands, 10)
 
 //  add sw
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('sw.js')
+  navigator.serviceWorker.register('../dist/sw.min.js')
 }
