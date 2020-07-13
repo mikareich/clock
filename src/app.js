@@ -9,7 +9,7 @@ function setHands() {
     new Date().getTime() - new Date().setHours(0, 0, 0, 0)
   const DayProgress = Milliseconds_Of_Day / Total_Milliseconds_Of_Day
 
-  // calculate progress in degreses multiplicated by the implementation
+  // calculate progress in degreses multiplicated by the implementation pf the hands
   const HoursRotation = DayProgress * 360 * 2
   const MinutesRotation = DayProgress * 360 * 24
   const SecondsRotation = DayProgress * 360 * 1440
